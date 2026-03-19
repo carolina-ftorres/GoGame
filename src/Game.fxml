@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller"
+            style="-fx-background-image: url('background2.jpg'); -fx-background-size: cover;"
+            prefHeight="600.0" prefWidth="600.0">
+
+    <children>
+        <FlowPane fx:id="mainPane" orientation="VERTICAL" alignment="TOP_CENTER" hgap="15.0" vgap="20.0"
+                  AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+
+            <!-- Captures -->
+            <HBox alignment="CENTER" spacing="20">
+                <Label fx:id="blackCatchesLeft" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Black Captures: 0" />
+                <Label fx:id="whiteCatchesLeft" style="-fx-font-size: 16; -fx-font-weight: bold;" text="White Captures: 0" />
+            </HBox>
+
+            <!-- Game Board -->
+            <StackPane maxWidth="Infinity" maxHeight="Infinity" styleClass="board-container">
+                <Pane fx:id="boardPane" prefHeight="400" prefWidth="400" maxHeight="Infinity" maxWidth="Infinity">
+
+                    <!-- Grid lines -->
+                    <Pane fx:id="gridPane" prefHeight="400" prefWidth="400">
+                        <Line endX="400" layoutY="0" />
+                        <Line endX="400" layoutY="100" />
+                        <Line endX="400" layoutY="200" />
+                        <Line endX="400" layoutY="300" />
+                        <Line endX="400" layoutY="400" />
+
+                        <Line endY="400" layoutX="0" />
+                        <Line endY="400" layoutX="100" />
+                        <Line endY="400" layoutX="200" />
+                        <Line endY="400" layoutX="300" />
+                        <Line endY="400" layoutX="400" />
+                    </Pane>
+
+                    <!-- Black Circles -->
+                    <Pane fx:id="circlesPane" pickOnBounds="false" prefHeight="400" prefWidth="400">
+                        <Circle id="b_0_0" centerX="0" centerY="0" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_0_1" centerX="100" centerY="0" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_0_2" centerX="200" centerY="0" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_0_3" centerX="300" centerY="0" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_0_4" centerX="400" centerY="0" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="b_1_0" centerX="0" centerY="100" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_1_1" centerX="100" centerY="100" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_1_2" centerX="200" centerY="100" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_1_3" centerX="300" centerY="100" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_1_4" centerX="400" centerY="100" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="b_2_0" centerX="0" centerY="200" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_2_1" centerX="100" centerY="200" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_2_2" centerX="200" centerY="200" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_2_3" centerX="300" centerY="200" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_2_4" centerX="400" centerY="200" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="b_3_0" centerX="0" centerY="300" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_3_1" centerX="100" centerY="300" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_3_2" centerX="200" centerY="300" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_3_3" centerX="300" centerY="300" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_3_4" centerX="400" centerY="300" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="b_4_0" centerX="0" centerY="400" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_4_1" centerX="100" centerY="400" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_4_2" centerX="200" centerY="400" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_4_3" centerX="300" centerY="400" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="b_4_4" centerX="400" centerY="400" fill="black" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                    </Pane>
+
+                    <!-- White Circles -->
+                    <Pane fx:id="circlesPane2" pickOnBounds="false" prefHeight="400" prefWidth="400">
+                        <Circle id="w_0_0" centerX="0" centerY="0" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_0_1" centerX="100" centerY="0" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_0_2" centerX="200" centerY="0" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_0_3" centerX="300" centerY="0" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_0_4" centerX="400" centerY="0" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="w_1_0" centerX="0" centerY="100" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_1_1" centerX="100" centerY="100" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_1_2" centerX="200" centerY="100" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_1_3" centerX="300" centerY="100" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_1_4" centerX="400" centerY="100" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="w_2_0" centerX="0" centerY="200" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_2_1" centerX="100" centerY="200" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_2_2" centerX="200" centerY="200" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_2_3" centerX="300" centerY="200" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_2_4" centerX="400" centerY="200" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="w_3_0" centerX="0" centerY="300" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_3_1" centerX="100" centerY="300" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_3_2" centerX="200" centerY="300" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_3_3" centerX="300" centerY="300" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_3_4" centerX="400" centerY="300" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+
+                        <Circle id="w_4_0" centerX="0" centerY="400" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_4_1" centerX="100" centerY="400" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_4_2" centerX="200" centerY="400" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_4_3" centerX="300" centerY="400" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                        <Circle id="w_4_4" centerX="400" centerY="400" fill="lightblue" onMouseClicked="#onPlayClicked" opacity="0" radius="20" />
+                    </Pane>
+                </Pane>
+            </StackPane>
+
+            <!-- Buttons -->
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="undo" onAction="#onUndoClicked" text="Undo">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="close" onAction="#onCloseClicked" text="Close Game">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </HBox>
+
+        </FlowPane>
+    </children>
+</AnchorPane>

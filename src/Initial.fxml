@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <FlowPane alignment="TOP_CENTER" hgap="15.0" orientation="VERTICAL" prefWrapLength="580.0" vgap="20.0"
+                AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+
+         <VBox alignment="CENTER">
+            <children>
+               <Label text="WELCOME" textFill="BLACK">
+                  <font>
+                     <Font name="System Bold" size="30.0" />
+                  </font>
+               </Label>
+               <Label text="GoGame" textFill="BLACK">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+
+         <Button fx:id="newGame" maxWidth="300" minWidth="200" onMouseClicked="#onNewGameClicked" text="New Game" />
+         <Button fx:id="continueGame" maxWidth="300" minWidth="200" onMouseClicked="#onContinueClicked" text="Continue Game" />
+         <Button fx:id="close" maxWidth="300" minWidth="200" onMouseClicked="#onCloseClicked" text="Close Game" />
+
+      </FlowPane>
+   </children>
+</AnchorPane>
