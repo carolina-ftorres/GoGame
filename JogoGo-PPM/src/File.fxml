@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller"
+            prefWidth="600" prefHeight="400"
+            style="-fx-background-image: url('background.jpg'); -fx-background-size: cover;">
+
+   <children>
+      <VBox fx:id="mainContainer"
+            alignment="CENTER"
+            spacing="20"
+            fillWidth="true"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            maxWidth="400">
+
+         <Label text="Load Game:">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+
+         <TextField fx:id="loadFile" promptText="Enter file name..." maxWidth="300" />
+
+         <Button mnemonicParsing="false" onAction="#onLoadClicked" text="Load" maxWidth="100" />
+      </VBox>
+   </children>
+</AnchorPane>
